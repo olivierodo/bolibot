@@ -32,8 +32,6 @@ app.post('/:lang', function (req, res) {
       "response_type": "in_channel",
        "attachments": [
         {
-          "title": '@' + (req.body.user_name || 'Someone') + ' says : ',
-          "pretext": options.q,
           "text": response.data.translations[0].translatedText,
         }
       ]
