@@ -28,7 +28,15 @@ app.post('/:lang', function (req, res) {
 
   translate.translations.list(options, function(err, response) {
     var result = response.data.translations;
-    return res.send(result);
+    return res.send({
+      "attachments": [
+        {
+          "title": '@' + (req.body.user_name || 'Someone') + ' says : ',
+          "pretext": options.q,
+          "text": response.data.translations[0].translatedText,
+        }
+      ]
+    });
   });
 });
 
