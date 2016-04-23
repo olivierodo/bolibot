@@ -20,7 +20,7 @@ module.exports = function(options) {
       w[type].history(id, { inclusive: 1, count: 1}, function(err, response) {
          if (err) reject(err);
          if (!response.messages || !response.messages.length) reject('Message Not found');
-         console.log(response.messages);
+         console.log(arguments);
          resolve(response.messages[0].text);
       });
     });
