@@ -1,19 +1,24 @@
 {
-  "name": "OpenShift-Sample-App",
+  "name": "translate-slack-bot",
   "version": "1.0.0",
-  "description": "OpenShift Sample Application",
-  "keywords": [
-    "OpenShift",
-    "Node.js",
-    "application",
-    "openshift"
-  ],
-  "author": {
-    "name": "OpenShift",
-    "email": "ramr@example.org",
-    "url": "http://www.openshift.com/"
+  "description": "Slack bot to translate text from google translate",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "homepage": "http://www.openshift.com/",
+  "keywords": [
+    "slack",
+    "slack-bot",
+    "google-translate",
+    "translate"
+  ],
+  "license": "ISC"
+  "author": {
+    "name": "Olivier Rodomond",
+    "email": "o@rodomond.com",
+    "url": "http://olivier.rodomond.com"
+  },
+  "homepage": "http://www.translate-bot.com/",
   "repository": {
     "type": "git",
     "url": "https://github.com/openshift/origin-server"
@@ -31,5 +36,5 @@
   "bundleDependencies": [],
 
   "private": true,
-  "main": "server.js"
+  "main": "app.js"
 }
