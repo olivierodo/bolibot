@@ -20,6 +20,7 @@ app.get('/', function (req, res) {
 });
 
 app.post('/:lang', function (req, res) {
+  console.log(req.body);
   function action(text) {
     translate({
       q : text,
