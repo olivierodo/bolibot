@@ -15,6 +15,7 @@ module.exports = function(options) {
 
   this.by = function(type, id, messageId) {
     var self = this;
+         console.log(arguments);
     return new Promise(function(resolve, reject) {
       var w = new webClient(this.options.token, {logLevel: this.options.logLevel});
       w[type].history(id, { inclusive: 1, count: 1}, function(err, response) {
