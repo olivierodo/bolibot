@@ -61,6 +61,7 @@ var bot = function(options) {
             ).then(function(response) {
               reactions(self.options).remove('hourglass_flowing_sand',reaction.item.channel, reaction.item.ts);
             }, function(err) {
+              console.log(err);
             });
           });
         });
