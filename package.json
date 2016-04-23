@@ -24,8 +24,7 @@
     "url": "https://github.com/openshift/origin-server"
   },
   "engines": {
-    "node": ">= 0.6.0",
-    "npm": ">= 1.0.0"
+    "node": "4.1.1"
   },
   "dependencies": {
     "@slack/client": "^2.3.0",
