@@ -29,7 +29,8 @@ app.post('/:lang', function (req, res) {
   translate.translations.list(options, function(err, response) {
     var result = response.data.translations;
     return res.send({
-      "attachments": [
+      "response_type": "in_channel",
+       "attachments": [
         {
           "title": '@' + (req.body.user_name || 'Someone') + ' says : ',
           "pretext": options.q,
