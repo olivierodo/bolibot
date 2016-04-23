@@ -27,17 +27,16 @@ var bot = function(options) {
 
 
     rtm.on(CLIENT_EVENTS.RTM.AUTHENTICATED, function (rtmStartData) {
-        console.log('auth', rtmStartData);
+        //console.log('auth', rtmStartData);
     });
 
 
     rtm.on(RTM_EVENTS.MESSAGE, function (message) {
-      console.log('message',message);
+      //console.log('message',message);
     });
 
     //reactions
     rtm.on(RTM_EVENTS.REACTION_ADDED, function (reaction) {
-      console.log(reaction)
       var emoji = reaction.reaction;
       var lang = emoji.match(/^flag-[a-z]{2}$/) && emoji.substr(-2, 2);
       if(!lang) return;
@@ -45,7 +44,7 @@ var bot = function(options) {
       if(!lang) return; //ToDO send message that we don't know what it this flag
       reactions(self.options).add('hourglass_flowing_sand',reaction.item.channel, reaction.item.ts);
       self.rtm.sendTyping(reaction.item.channel);
-      console.log(lang);
+      //console.log(lang);
 
       search(self.options).getMessage(reaction.item.ts, reaction.item.channel)
         .then(function(response) {
