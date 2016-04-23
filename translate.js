@@ -14,7 +14,6 @@ var o = function(options) {
     translate.translations.list(options, function(err, response) {
       if (err) reject(err);
       console.log(response);
-      resolve('cool');
       var result = response.data.translations;
       resolve(result[0].translatedText);
     });
