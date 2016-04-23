@@ -17,9 +17,10 @@ module.exports = function(options) {
     var self = this;
     return new Promise(function(resolve, reject) {
       var w = new webClient(this.options.token, {logLevel: this.options.logLevel});
-      w[type].history(id, {latest:messageId, inclusive: 1, count: 1}, function(err, response) {
+      w[type].history(id, { inclusive: 1, count: 1}, function(err, response) {
          if (err) reject(err);
          if (!response.messages || !response.messages.length) reject('Message Not found');
+         console.log(response.messages);
          resolve(response.messages[0].text);
       });
     });
