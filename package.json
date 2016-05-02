@@ -4,7 +4,7 @@
   "description": "Slack bot to translate text from google translate",
   "scripts": {
     "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test -R nyan --recursive -w"
   },
   "keywords": [
     "slack",
@@ -35,7 +35,12 @@
     "firebase": "^2.4.2",
     "googleapis": "^5.2.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5",
+    "sinon": "^1.17.3",
+    "sinon-as-promised": "^4.0.0"
+  },
   "bundleDependencies": [],
   "private": true,
   "main": "app.js"
