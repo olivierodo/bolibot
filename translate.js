@@ -5,7 +5,7 @@ var google = require('googleapis'),
 
 var o = function(options) {
   return new Promise(function(resolve, reject) {
-    options.key = options.key || config.google.key;
+    options.key = options.key || process.env.G_TRANSLATE_KEY || config.google.key;
 
     if (!options.key) return reject('need google key');
     if (!options.q) return reject('need query');

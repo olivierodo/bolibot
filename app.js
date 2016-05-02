@@ -11,7 +11,7 @@ var
   app.use(bodyParser.urlencoded({extended: true})); 
 
 var slackOptions = {
-  token : config.slack.api_token,
+  token : process.env.SLACK_TOKEN || config.slack.api_token,
   logLevel: 'info'
 };
 

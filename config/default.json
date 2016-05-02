@@ -1,8 +1,9 @@
 {
   "google" : {
-    "key" : "AIzaSyAA1HaRPD0pYqDjPSbsq_ahpo2Ew6E631Y"
+    "key" : "YOUR_GOOGLE_TRANSLATE_API_KEY",
+    "_comment" : "create a google translate key here : https://console.developers.google.com/apis/api/translate/overview"
   },
   "slack" : {
-    "api_token" : "xoxb-37196557893-lHlXq4nERXdLUjoPIG1d04Gg"
+    "api_token" : "YOUR_SLACK_TOKEN"
   }
 }
