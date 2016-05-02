@@ -21,19 +21,21 @@ app.get('/', function (req, res) {
   res.send('hello world');
 });
 
-/*
 app.get('/oauth', function (req, res) {
   var code  = req.query.code;
   var state = req.query.state;
-
-  oauth.access(code)
-  .then(function(response) {
-    res.send(response);
-  }, function(error) {
-    res.send(error);
-  });
+  
+  try {
+    oauth.access(code)
+    .then(function(response) {
+      res.send(response);
+    }, function(error) {
+      res.send(error);
+    });
+  } catch(err) {
+    res.send(err.message);
+  };
 });
-*/
 
 app.post('/:lang', function (req, res) {
   try {
@@ -41,8 +43,7 @@ app.post('/:lang', function (req, res) {
     .then(function(response) {
       res.send(response);
     }, function(err) {
-    console.log(err);
-      res.send({text : err.message});
+      res.send({text : err.message });
     });
   } catch(err) {
     console.log(err);
