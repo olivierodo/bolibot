@@ -47,6 +47,8 @@ The languages available by slash commandes are :
 | `/kr [YOUR MESSAGE]` | Korean |
 | `/cn [YOUR MESSAGE]` | Chinese |
 | `/th [YOUR MESSAGE]` | Thai |
+| `/it [YOUR MESSAGE]` | Italian |
+| `/jp [YOUR MESSAGE]` | Japanese |
 
 
 ### Reactions
@@ -57,15 +59,17 @@ Preview : XXXXXX
 
 The languages available by slash commandes are :
 
-| command | language |
+| Language | Reaction |
 | ---- | ---- |
-| English | :flag-gb: `:flag-gb:` <br> :flag-us: `:flag-us:` <br> :flag-um: `:flag-um:` |
-| French | :flag-fr: `:flag-fr:` |
+| English | :gb: `:flag-gb:` <br> :us: `:flag-us:` <br> :us: `:flag-um:` |
+| French | :fr: `:flag-fr:` |
 | Deutch | :de: `:flag-de:` |
 | Spanish | :es: `:flag-ea:` <br> :es: `:flag-ea:` |
 | Korean | :kr: `:flag-kr:`|
 | Chinese | :cn: `:flag-cn:`|
 | Thai | 🇹🇭  `:flag-th:`|
+| Japanese | :jp:  `:flag-jp:`|
+| Italian | :it:  `:flag-it:`|
 
 ### Add a new language
 
@@ -77,10 +81,17 @@ Please [create a issue](https://github.com/olivierodo/translator-slack-bot/issue
 
 If you wants to add a new language edit [default.json](/config/defaulg.json)
 
-### Deploy
+# Deploy
 
 The translator bot is a Node app which is designed to run easily on Heroku.
 
-### Contribution
+# What If ?
+
+## I had a reaction to a message but the bot doesn't answer.
+
+The bot is a team memer as everyone else so the bot can only post on channel/group that he is invited.
+The same for the private tchat the bot is not able to acces to you private conversation if you don't invite him.
+
+# Contribution
 
 Pull requests, bug reports and ideas are very welcome!

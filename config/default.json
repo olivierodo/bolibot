@@ -5,5 +5,17 @@
   },
   "slack" : {
     "api_token" : "YOUR_SLACK_TOKEN"
+  },
+
+  "languages" : {
+    "th" : [],
+    "fr" : [],
+    "es" : ["ea", "es"],
+    "kr" : [],
+    "zh-CN" : ["cn"],
+    "de" : [],
+    "jp" : [],
+    "jp" : [],
+    "en" : ["gb","us", "um"]
   }
 }

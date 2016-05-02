@@ -1,14 +1,6 @@
 
 module.exports = {
-  data : {
-    'th' : [],
-    'fr' : [],
-    'es' : ['ea', 'es'],
-    'ko' : [],
-    'zh-CN' : ['cn'],
-    'de' : [],
-    'en' : ['gb','us', 'um']
-  },
+  data : require('config').languages,
 
   get : function(flag) {
     var res = false;
