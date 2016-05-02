@@ -21,11 +21,11 @@ app.get('/', function (req, res) {
   res.send('hello world');
 });
 
+// GET /OAUTH
 app.get('/oauth', function (req, res) {
-  var code  = req.query.code;
-  var state = req.query.state;
-  
   try {
+    var code  = req.query.code;
+    var state = req.query.state;
     oauth.access(code)
     .then(function(response) {
       res.send(response);
@@ -37,6 +37,7 @@ app.get('/oauth', function (req, res) {
   };
 });
 
+// POST /{:lang} (/en, /fr
 app.post('/:lang', function (req, res) {
   try {
     command.translate(req.params.lang, req.body.text)
@@ -51,6 +52,8 @@ app.post('/:lang', function (req, res) {
   }
 });
 
+
+//START APP
 var port = process.env.PORT || 5000;
 app.listen(port, process.env.OPENSHIFT_NODEJS_IP, function () {
     console.log('Example app listening on port '+ port+ '!');
