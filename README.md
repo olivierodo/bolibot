@@ -61,11 +61,11 @@ The languages available by slash commandes are :
 | ---- | ---- |
 | English | :flag-gb: `:flag-gb:` <br> :flag-us: `:flag-us:` <br> :flag-um: `:flag-um:` |
 | French | :flag-fr: `:flag-fr:` |
-| Deutch | :flag-de: `:flag-de:` |
-| Spanish | :flag-ea: `:flag-ea:` <br> :flag-es: `:flag-es:` |
-| Korean | :flag-kr: `:flag-kr:`|
-| Chinese | :flag-cn: `:flag-cn:`|
-| Thai | :flag-th: `:flag-th:`|
+| Deutch | :de: `:flag-de:` |
+| Spanish | :es: `:flag-ea:` <br> :es: `:flag-ea:` |
+| Korean | :kr: `:flag-kr:`|
+| Chinese | :cn: `:flag-cn:`|
+| Thai | 🇹🇭  `:flag-th:`|
 
 ### Add a new language
 
