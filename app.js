@@ -17,6 +17,7 @@ var slackOptions = {
 };
 */
 
+// GET /
 app.get('/', function (req, res) {
   res.send('hello world');
 });
@@ -28,6 +29,7 @@ app.get('/oauth', function (req, res) {
     var state = req.query.state;
     oauth.access(code)
     .then(function(response) {
+      bot.add(response);
       res.send(response);
     }, function(error) {
       res.send(error);
@@ -52,9 +54,9 @@ app.post('/:lang', function (req, res) {
   }
 });
 
-
 //START APP
 var port = process.env.PORT || 5000;
 app.listen(port, process.env.OPENSHIFT_NODEJS_IP, function () {
     console.log('Example app listening on port '+ port+ '!');
+    bot.start();
 });

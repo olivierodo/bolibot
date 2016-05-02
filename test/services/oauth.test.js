@@ -68,7 +68,7 @@ describe('#oauth', function() {
       });
     });
 
-    it('Should Succes and save on team model', function(done) {
+    it('Should Success and save on team model', function(done) {
 
       var TeamStub = sandbox.stub(Team, 'save');
       TeamStub.resolves('save model');
@@ -76,13 +76,13 @@ describe('#oauth', function() {
       var stub = {
         oauth : {
           access : function() {
-            arguments[4].call(this);
+            arguments[4].call(this, undefined, 'obj oauth');
           }
         }
       };
 
       Svc.access('code', stub).then(function(response) {
-        expect(response).to.equal('save model');
+        expect(response).to.equal('obj oauth');
         done();
       }, function(err) {
         expect(false).to.equal(true);

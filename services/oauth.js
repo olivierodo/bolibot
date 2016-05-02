@@ -1,5 +1,6 @@
 var webClient = require('@slack/client').WebClient,
 Team = require('../models/team'),
+config = require('config'),
 Promise = require('bluebird');
 
 module.exports = {
@@ -10,15 +11,15 @@ module.exports = {
       self = this;
     return new Promise(function(resolve, reject) {
       w.oauth.access(
-        process.env.CLIENT_ID,
-        process.env.CLIENT_SECRET,
+        process.env.CLIENT_ID || config.slack.client_id,
+        process.env.CLIENT_SECRET || config.slack.client_secret,
         code,
         {},
         function(err, response) {
           if (err) return reject(err);
           Team.save(response)
           .then(function(res) {
-            resolve(res);
+            resolve(response);
           }, reject);
         }
       );
