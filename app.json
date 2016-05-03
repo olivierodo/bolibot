@@ -1,0 +1,24 @@
+{
+  "name": "Translate Slack Bot Integration",
+  "description": "A slack bot integration to translate message in different languages",
+  "repository": "https://github.com/olivierodo/translator-slack-bot",
+  "logo": "https://node-js-sample.herokuapp.com/node.svg",
+  "keywords": ["node", "express", "slack", "integration"],
+  "env": {
+      "G_TRANSLATE_KEY": {
+          "description": "Your google translate api key"
+      },
+      "SLACK_TOKEN": {
+          "description": "Custom integration - Your slackbot Token"
+      }
+      "CLIENT_ID": {
+          "description": "Official app integration - Your app client id"
+      },
+      "CLIENT_SECRET": {
+          "description": "Official app integration - Your app client secret"
+      },
+      "FIREBASE_URL": {
+          "description": "Official app integration - Your firebase url"
+      }
+   }
+}

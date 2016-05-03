@@ -83,7 +83,12 @@ If you wants to add a new language edit [default.json](/config/defaulg.json)
 
 # Deploy
 
-The translator bot is a Node app which is designed to run easily on Heroku.
+The app is designed to run easily on Heroku or Docker.
+
+## Heroku
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/olivierodo/translator-slack-bot)
+
 
 # What If ?
 
