@@ -97,6 +97,8 @@ The app is designed to run easily on Heroku or Docker.
 The bot is a team memer as everyone else so the bot can only post on channel/group that he is invited.
 The same for the private tchat the bot is not able to acces to you private conversation if you don't invite him.
 
-# Contribution
+# Contributors
 
-Pull requests, bug reports and ideas are very welcome!
+* [Olivier Rodomond](https://github.com/olivierodo)
+
+[How to contribute ?](contributing.md)
