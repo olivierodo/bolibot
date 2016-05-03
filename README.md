@@ -89,6 +89,34 @@ The app is designed to run easily on Heroku or Docker.
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/olivierodo/translator-slack-bot)
 
+## Docker
+
+https://hub.docker.com/r/olivierodo/translate-slack-bot/
+
+### Getting started
+
+Get the Docker container
+```
+docker pull olivierodo/translate-slack-bot
+```
+
+Use Custom App integration
+
+```
+docker run -p 80:5000 \
+ -e SLACK_TOKEN=XXXX \
+ olivierodo/translate-slack-bot
+```
+
+Use the Offical App integration
+
+```
+docker run -p 80:5000 \
+ -e CLIENT_ID=XXXX \
+ -e CLIENT_SECRET=XXXX \
+ -e FIREBASE_URL=XXXX \
+ olivierodo/translate-slack-bot
+```
 
 # What If ?
 
