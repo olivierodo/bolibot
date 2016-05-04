@@ -1,7 +1,7 @@
 {
-  "name": "Translate Slack Bot Integration",
+  "name": "Bolibot - Translate Slack Bot Integration",
   "description": "A slack bot integration to translate message in different languages",
-  "repository": "https://github.com/olivierodo/translator-slack-bot",
+  "repository": "https://github.com/olivierodo/bolibot",
   "logo": "https://node-js-sample.herokuapp.com/node.svg",
   "keywords": ["node", "express", "slack", "integration"],
   "env": {

@@ -1,5 +1,5 @@
 {
-  "name": "translate-slack-bot",
+  "name": "Bolibot",
   "version": "1.0.0",
   "description": "Slack bot to translate text from google translate",
   "scripts": {
@@ -19,7 +19,7 @@
     "email": "o@rodomond.com",
     "url": "http://olivier.rodomond.com"
   },
-  "homepage": "http://www.translate-bot.com/",
+  "homepage": "http://bolibot.bolingo.io/",
   "repository": {
     "type": "git",
     "url": "https://github.com/openshift/origin-server"
