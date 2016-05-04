@@ -4,7 +4,8 @@
   "description": "Slack bot to translate text from google translate",
   "scripts": {
     "start": "node app.js",
-    "test": "mocha test -R nyan --recursive"
+    "test": "mocha test -R spec --recursive",
+    "test-watch": "mocha test -R landing --recursive -w"
   },
   "keywords": [
     "slack",
