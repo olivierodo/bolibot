@@ -1,17 +1,29 @@
 var google = require('googleapis'),
   Promise = require("bluebird"),
   config = require('config'),
-  languages = require('./translate/languages'),
   translations = google.translate('v2').translations;
 
 module.exports = {
+  data : require('config').languages,
+
+  getLanguage : function(flag) {
+    var res = false;
+    for(var s in this.data) {
+      if (s === flag || -1 !== this.data[s].indexOf(flag)) {
+        res = s;
+        break;
+      }
+    }
+    return res;
+  },
+
   get : function(options) {
 
     if (!options) throw new ReferenceError('The function needs options');
     if (!options.q) throw new ReferenceError('Please add the query on the options');
     if (!options.target) throw new ReferenceError('Please add the target on the options');
 
-    var l  = languages.get(options.target);
+    var l  = this.getLanguage(options.target);
     if(!l) throw new ReferenceError('The \''+ options.target+'\' language is not available');
 
     options.target = l;

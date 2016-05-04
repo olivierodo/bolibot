@@ -1,7 +1,7 @@
 var config = require('config'),
   slack = require('@slack/client'),
   translate = require('../translate'),
-  languages = require('../translate/languages'),
+  //languages = require('../translate/languages'),
   search = require('./search'),
   message = require('./message'),
   reactions = require('./reaction'),

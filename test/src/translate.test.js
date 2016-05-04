@@ -8,6 +8,26 @@ var translations = google.translate('v2').translations;
 
 describe('#translate', function() {
 
+  describe('#getLanguage()', function() {
+    it('should return false if the language is not available', function(done) {
+        var result = Svc.getLanguage('zw');
+        expect(result).to.equal(false);
+        done();
+    });
+
+    it('should return the default language from sub language', function(done) {
+        var result = Svc.getLanguage('ea');
+        expect(result).to.equal('es');
+        done();
+    });
+
+    it('should return the default language from sub language', function(done) {
+        var result = Svc.getLanguage('es');
+        expect(result).to.equal('es');
+        done();
+    });
+  });
+
   describe('#get()', function() {
     var sandbox;
     beforeEach(function () {
