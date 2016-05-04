@@ -1,7 +1,7 @@
-var Svc = require('../../services/oauth'),
+var Svc = require('../../src/oauth'),
 assert = require('chai').assert,
 expect = require('chai').expect,
-Team = require('../../models/team'),
+Team = require('../../src/models/team'),
 sinon = require('sinon'),
 Promise = require('bluebird');
 

@@ -1,4 +1,4 @@
-var Svc = require('../../../services/translate/languages'),
+var Svc = require('../../../src/translate/languages'),
 assert = require('chai').assert,
 expect = require('chai').expect;
 

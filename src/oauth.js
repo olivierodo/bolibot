@@ -1,5 +1,5 @@
 var webClient = require('@slack/client').WebClient,
-Team = require('../models/team'),
+Team = require('./models/team'),
 config = require('config'),
 Promise = require('bluebird');
 

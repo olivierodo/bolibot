@@ -1,5 +1,5 @@
-var Svc = require('../../services/command'),
-translate = require('../../services/translate');
+var Svc = require('../../src/command'),
+translate = require('../../src/translate');
 assert = require('chai').assert,
 expect = require('chai').expect,
 sinon = require('sinon'),

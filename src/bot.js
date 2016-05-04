@@ -1,5 +1,5 @@
 var client = require('./bot/client'),
-Team = require('../models/team.js'),
+Team = require('./models/team.js'),
 Promise = require('bluebird');
 
 module.exports = {

@@ -1,5 +1,4 @@
-var Team = require('../../models/team'),
-//botClient = require('../../services/bot/client'),
+var Team = require('../../src/models/team'),
 assert = require('chai').assert,
 expect = require('chai').expect,
 sinon = require('sinon'),
@@ -12,7 +11,7 @@ describe('#bot', function() {
 
   var Svc
   beforeEach(function () {
-    Svc = require('../../services/bot');
+    Svc = require('../../src/bot');
     Svc.list = [];
   });
 
