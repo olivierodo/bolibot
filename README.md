@@ -1,66 +1,60 @@
-# Translator-slack-bot
+[![Build Status](https://travis-ci.org/olivierodo/bolibot.svg?branch=master)](https://travis-ci.org/olivierodo/translator-slack-bot)
 
-A simple translator pluggable bot for [slack](https://slack.com/)
+# Bolibot
+
+*Bolibot* is the best [slack](https://slack.com/) bot international team friend
 
 # Setup
 
 ### Official Version
 
-You can install and use directly the hosted official bot here : XXXXXX
-
-### Custom Version
-
-To use the custom version you have to :
-* Create a google translate api key
-* Create a slack token
-* Clone and configure the app : add *env* vars `SLACK_TOKEN` and `G_TRANSLATE_KEY` or update [production.json](/config/production.json)
-* Deploy it!
+You can add *Bolibot* to your slack team visit : http://bolibot.bolinbo.io
 
 # Features
 
-|  | Official App | Custom App  | Comment |
-| ------------- |-------------| -----| --- |
-| hosted | :heavy_check_mark:  | :x: | App already host  |
-| Translate by slash command | :heavy_check_mark: | :x: | Use command like `/en Cómo estás` |
-| Translate by slash command in public channel/group |  :heavy_check_mark:    | :heavy_check_mark: |  |
-| Translate by slash command in private channel/group | :heavy_check_mark:      | :heavy_check_mark: |  |
-| Translate by slash command in private chat| :heavy_check_mark: | :heavy_check_mark: |  Only you will be able to see the translation |
-| Translate by reaction | :heavy_check_mark: | :x: | Use flag reaction to translate a message |
-| Translate by reaction in public channel/group |  :heavy_check_mark:    | :x: |  |
-| Translate by reaction in private channel/group | :heavy_check_mark:      | :x: |  |
-| Translate by reaction in private chat| :x: | :x: |  The bot have to give you some privacy |
-
-# Available Language
+|  |  | Type  |
+| ----------------------------------------------------- | ------------------- | ------------------------ |
+| Send a translated message on public channel/group     | :heavy_check_mark:  | Slash Command `/{lang}` |
+| Send a translated message on private channel/group    | :heavy_check_mark:  | Slash Command `/{lang}` |
+| Send a translated message on private chat             | :heavy_check_mark:  | Slash Command `/{lang}` |
+| Translate a received message on public channel/group  | :heavy_check_mark:  | Add a flag's reaction on the message you want to translate |
+| Translate a received message on private channel/group | :heavy_check_mark:  | Add a flag's reaction on the message you want to translate |
+| Translate a received message on private chat          | :x:                 | The bot have to give you some privacy, private chat are PRIVATE |
 
 ### Slash command
 
-Preview : XXXXXX
+The Slash command allows you to send a translated message.
 
-The languages available by slash commandes are :
+* `/fr Hello` will translate hello in french then your recipient will see a message from you says :`bonjour`
 
-| command | language |
-| ---- | ---- |
-| `/en [YOUR MESSAGE]` | English |
-| `/fr [YOUR MESSAGE]` | French |
-| `/de [YOUR MESSAGE]` | Deutch |
-| `/es [YOUR MESSAGE]` | Spanish |
-| `/kr [YOUR MESSAGE]` | Korean |
-| `/cn [YOUR MESSAGE]` | Chinese |
-| `/th [YOUR MESSAGE]` | Thai |
-| `/it [YOUR MESSAGE]` | Italian |
+> Preview
+
+The slash commandes available are :
+
+| Slash Command              | Language |
+| -------------------- | -------- |
+| `/en [YOUR MESSAGE]` | English  |
+| `/fr [YOUR MESSAGE]` | French   |
+| `/de [YOUR MESSAGE]` | Deutch   |
+| `/es [YOUR MESSAGE]` | Spanish  |
+| `/kr [YOUR MESSAGE]` | Korean   |
+| `/cn [YOUR MESSAGE]` | Chinese  |
+| `/th [YOUR MESSAGE]` | Thai     |
+| `/it [YOUR MESSAGE]` | Italian  |
 | `/jp [YOUR MESSAGE]` | Japanese |
 
 
 ### Reactions
 
-Preview : XXXXXX
+*Bolibot* use the flag's emoji to translate archived or just received message.
+You just have to add a flag emoji as a reaction to the message you want to translate.
 
-> :warning: This feature is available only on *Custom version*
+> ![preview reaction](doc/img/preview_reaction.gif)
 
-The languages available by slash commandes are :
+The flag's reactions are :
 
 | Language | Reaction |
-| ---- | ---- |
+| ----     | ---- |
 | English | :gb: `:flag-gb:` <br> :us: `:flag-us:` <br> :us: `:flag-um:` |
 | French | :fr: `:flag-fr:` |
 | Deutch | :de: `:flag-de:` |
@@ -71,19 +65,16 @@ The languages available by slash commandes are :
 | Japanese | :jp:  `:flag-jp:`|
 | Italian | :it:  `:flag-it:`|
 
-### Add a new language
+# Deploy your own Bolibot
 
-#### Official Version
+The app is designed to run easily on Heroku or Docker.
 
-Please [create a issue](https://github.com/olivierodo/translator-slack-bot/issues/new) or send an email to the support team : XXXX
-
-#### Custom Version
+To host and install *Bolibot* you have to :
+* Create a google translate api key
+* Create a slack token
 
 If you wants to add a new language edit [default.json](/config/defaulg.json)
 
-# Deploy
-
-The app is designed to run easily on Heroku or Docker.
 
 ## Heroku
 
@@ -120,6 +111,10 @@ docker run -p 80:5000 \
 
 # What If ?
 
+## I need to translate on a language not available.
+
+Please [create a issue](https://github.com/olivierodo/bolibot/issues/new) or send an email to the support team : support@bolingo.io
+
 ## I had a reaction to a message but the bot doesn't answer.
 
 The bot is a team memer as everyone else so the bot can only post on channel/group that he is invited.
@@ -129,4 +124,4 @@ The same for the private tchat the bot is not able to acces to you private conve
 
 * [Olivier Rodomond](https://github.com/olivierodo)
 
-[How to contribute ?](contributing.md)
+[How to contribute ?](doc/contributing.md)
