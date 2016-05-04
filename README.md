@@ -12,7 +12,7 @@ You can add *Bolibot* to your slack team visit : http://bolibot.bolinbo.io
 
 # Features
 
-|  |  | Type  |
+| Bolibot can ...                                       |  Available          | Comment                  |
 | ----------------------------------------------------- | ------------------- | ------------------------ |
 | Send a translated message on public channel/group     | :heavy_check_mark:  | Slash Command `/{lang}` |
 | Send a translated message on private channel/group    | :heavy_check_mark:  | Slash Command `/{lang}` |
