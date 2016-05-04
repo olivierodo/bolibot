@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/olivierodo/translate-slack-bot.svg?branch=master)](https://travis-ci.org/olivierodo/translator-slack-bot)
+[![Build Status](https://travis-ci.org/olivierodo/translator-slack-bot.svg?branch=master)](https://travis-ci.org/olivierodo/translator-slack-bot)
 
 # Bolibot
 
