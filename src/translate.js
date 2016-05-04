@@ -1,9 +1,9 @@
 var google = require('googleapis'),
   Promise = require("bluebird"),
-  config = require('config'),
-  translations = google.translate('v2').translations;
+  config = require('config');
 
 module.exports = {
+
   data : require('config').languages,
 
   getLanguage : function(flag) {
@@ -30,7 +30,9 @@ module.exports = {
 
     options.key = options.key || process.env.G_TRANSLATE_KEY || config.google.key;
 
+
     return new Promise(function(resolve, reject) {
+      var translations = google.translate('v2').translations;
       var g = options.google || translations;
       g.list(options, function(err, response) {
         if (err) return reject(err);

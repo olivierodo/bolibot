@@ -4,7 +4,6 @@ assert = require('chai').assert,
 expect = require('chai').expect,
 sinon = require('sinon'),
 Promise = require('bluebird');
-var translations = google.translate('v2').translations;
 
 describe('#translate', function() {
 
@@ -29,13 +28,25 @@ describe('#translate', function() {
   });
 
   describe('#get()', function() {
-    var sandbox;
+    var gstub, error, response;
+
+
     beforeEach(function () {
-          sandbox = sinon.sandbox.create();
+        //define a mock for google translate
+        gstub = sinon.stub(google, 'translate', function () {
+            function MockTranslations() {
+                this.translations = {
+                    list: sinon.stub().callsArgWith(1, error, response)
+                };
+            }
+            return new MockTranslations();
+        });
     });
 
     afterEach(function () {
-          sandbox.restore();
+      gstub && gstub.restore();
+      error = undefined;
+      response = undefined;
     });
 
     it('should return an error if the options is undefined', function(done) {
@@ -75,14 +86,12 @@ describe('#translate', function() {
     });
 
     it('Should return an error if google api fail' , function(done) {
-        var stub = {list : function(options, fn){
-          fn.call(this, 'google api error', null);
-        }};
+        error = 'google api error';
         Svc.get({
           q : 'Where are my donuts ?',
           target : 'fr',
-          google : stub
         }).then(function(response) {
+            done();
         }, function(err) {
           expect(err).to.equal('google api error');
           done();
@@ -90,13 +99,9 @@ describe('#translate', function() {
     });
 
     it('Should return an error if the response is null' , function(done) {
-        var stub = {list : function(options, fn){
-          fn.call(this, undefined, null);
-        }};
         Svc.get({
           q : 'Where are my donuts ?',
           target : 'fr',
-          google : stub
         }).then(function(response) {
         }, function(err) {
           expect(err).to.equal('An error occurred. Please try again later');
@@ -105,16 +110,12 @@ describe('#translate', function() {
     });
 
     it('Should return an error if google api success' , function(done) {
-        var stub = {list : function(options, fn){
-          var response = {data : {translations: [{
+       response = {data : {translations: [{
             translatedText : 'Où sont mes donuts ?'
-          }]}};
-          fn.call(this, undefined, response);
-        }};
+       }]}};
         Svc.get({
           q : 'Where are my donuts ?',
           target : 'fr',
-          google : stub
         }).then(function(response) {
           expect(response).to.equal('Où sont mes donuts ?');
           done();
