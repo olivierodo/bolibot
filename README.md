@@ -6,9 +6,20 @@
 
 # Setup
 
-### Official Version
-
 You can add *Bolibot* to your slack team visit : http://bolibot.bolinbo.io
+
+Or click on this button
+
+[![add button](https://platform.slack-edge.com/img/add_to_slack.png)](https://slack.com/oauth/authorize?scope=commands,bot,channels:history,groups:history,reactions:write,chat:write:user&client_id=9146495028.39316545539)
+
+### Permission
+
+To work well the app need the followed [slack's permission](https://api.slack.com/docs/oauth-scopes#types_of_scopes) :
+* channels:history
+* groups:history
+* reactions:write
+* chat:write:user
+
 
 # Features
 
