@@ -3,6 +3,7 @@ translate = require('../../src/translate');
 assert = require('chai').assert,
 expect = require('chai').expect,
 sinon = require('sinon'),
+config = require('config'),
 Promise = require('bluebird');
 
 require('sinon-as-promised')(Promise);
@@ -15,6 +16,34 @@ describe('#command', function() {
 
   afterEach(function () {
         sandbox.restore();
+  });
+
+  describe('#_verify()', function() {
+
+    afterEach(function () {
+         delete process.env.VERIFICATION_TOKEN;
+    });
+
+    it('Should return an error if the VERIFICATION_TOKEN is not set', function(done) {
+      try {
+        var result = Svc._verify();
+      } catch(err) {
+        expect(err.message).to.equal('Please set the VERIFICATION_TOKEN');
+        done();
+      }
+    });
+
+    it('Should return false if the verification key doesn\'t match', function(done) {
+        process.env.VERIFICATION_TOKEN = 'FOO';
+        expect(Svc._verify('BAR')).to.be.false;
+        done();
+    });
+
+    it('Should return false if the verification key doesn\'t match', function(done) {
+        process.env.VERIFICATION_TOKEN = 'FOO';
+        expect(Svc._verify('FOO')).to.be.true;
+        done();
+    });
   });
 
   describe('#translate()', function() {

@@ -1,8 +1,14 @@
 var Promise = require('bluebird'),
+  config = require('config'),
   translate = require('./translate');
 
 module.exports = {
 
+  _verify : function(vToken) {
+    var _v = process.env.VERIFICATION_TOKEN || config.slack.verification_token
+    if (!_v) throw new ReferenceError('Please set the VERIFICATION_TOKEN');
+    return _v === vToken;
+  },
 
   translate : function(lang, msg) {
     if (!lang) throw new ReferenceError('I can\'t define what is the language...');
