@@ -25,7 +25,8 @@ module.exports = {
     if (!options.q) throw new ReferenceError('Please add the query on the options');
     if (!options.target) throw new ReferenceError('Please add the target on the options');
 
-    var l  = this.getLanguage(options.target);
+    var self = this,
+      l  = this.getLanguage(options.target);
     if(!l) throw new ReferenceError('The \''+ options.target+'\' language is not available');
 
     options.target = l;
@@ -40,7 +41,7 @@ module.exports = {
         if (err) return reject(err);
         if (!response || !response.data) return reject('An error occurred. Please try again later');
         var result = response.data.translations;
-        resolve(result[0].translatedText);
+        resolve(self._decode(result[0].translatedText));
       });
     });
   },
