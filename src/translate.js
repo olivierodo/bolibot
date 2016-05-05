@@ -1,5 +1,6 @@
 var google = require('googleapis'),
   Promise = require("bluebird"),
+  Entities = require('html-entities').AllHtmlEntities;
   config = require('config');
 
 module.exports = {
@@ -16,6 +17,7 @@ module.exports = {
     }
     return res;
   },
+
 
   get : function(options) {
 
@@ -41,5 +43,9 @@ module.exports = {
         resolve(result[0].translatedText);
       });
     });
+  },
+
+  _decode : function(str) {
+    return (new Entities()).decode(str);
   }
 };

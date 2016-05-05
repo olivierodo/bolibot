@@ -127,5 +127,13 @@ describe('#translate', function() {
 
   });
 
+  describe('#_decode()', function(){
+    it('decode a html encoded message', function(done){
+      var result = Svc._decode('that&#39;s great');
+      expect(result).to.equal('that\'s great');
+      done();
+    });
+  });
+
 });
 
