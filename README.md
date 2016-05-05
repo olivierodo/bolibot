@@ -6,7 +6,7 @@
 
 # Setup
 
-You can add *Bolibot* to your slack team visit : http://bolibot.bolinbo.io
+You can add *Bolibot* to your slack team visit : http://bolibot.bolingo.io
 
 Or click on this button
 
