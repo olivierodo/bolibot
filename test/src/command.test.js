@@ -63,7 +63,7 @@ describe('#command', function() {
       }
     });
 
-    it.skip('Should have an error if the token doesn\'t match' , function(done) {
+    it('Should have an error if the token doesn\'t match' , function(done) {
       try {
         var result = Svc.translate('BAR');
       } catch (err) {
