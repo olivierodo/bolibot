@@ -10,6 +10,7 @@ require('sinon-as-promised')(Promise);
 
 describe('#command', function() {
   var sandbox;
+
   beforeEach(function () {
         sandbox = sinon.sandbox.create();
   });
@@ -26,6 +27,7 @@ describe('#command', function() {
 
     it('Should return an error if the VERIFICATION_TOKEN is not set', function(done) {
       try {
+        delete process.env.VERIFICATION_TOKEN;
         var result = Svc._verify();
       } catch(err) {
         expect(err.message).to.equal('Please set the VERIFICATION_TOKEN');
@@ -48,9 +50,31 @@ describe('#command', function() {
 
   describe('#translate()', function() {
 
+    before(function () {
+       process.env.VERIFICATION_TOKEN = 'FOO';
+    });
+
+    it('Should have an error if the token  is not provide' , function(done) {
+      try {
+        var result = Svc.translate();
+      } catch (err) {
+        expect(err.message).to.equal('The token is invalid');
+        done();
+      }
+    });
+
+    it.skip('Should have an error if the token doesn\'t match' , function(done) {
+      try {
+        var result = Svc.translate('BAR');
+      } catch (err) {
+        expect(err.message).to.equal('The token is invalid');
+        done();
+      }
+    });
+
     it('Should have an error if the lang is not defined' , function(done) {
       try {
-      var result = Svc.translate();
+      var result = Svc.translate('FOO');
       } catch (err) {
         expect(err.message).to.equal('I can\'t define what is the language...');
         done();
@@ -59,7 +83,7 @@ describe('#command', function() {
 
     it('Should have an error if the message is not defined' , function(done) {
       try {
-      var result = Svc.translate('fr');
+      var result = Svc.translate('FOO','fr');
       } catch (err) {
         expect(err.message).to.equal('I can\'t define what is the message...');
         done();
@@ -69,7 +93,7 @@ describe('#command', function() {
     it('Should have an error if the google api can\'t translate' , function(done) {
         var stub = sandbox.stub(translate, 'get');
         stub.rejects('error google api');
-        Svc.translate('fr', 'my message')
+        Svc.translate('FOO', 'fr', 'my message')
         .then( function(response) {
           done();
         }, function (err) {
@@ -81,7 +105,7 @@ describe('#command', function() {
     it('Should return the message with the good format' , function(done) {
         var stub = sandbox.stub(translate, 'get');
         stub.resolves('mon message');
-        Svc.translate('fr', 'my message')
+        Svc.translate('FOO', 'fr', 'my message')
         .then( function(response) {
           expect(response).to.deep.equal({
             response_type : 'in_channel',

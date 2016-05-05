@@ -10,7 +10,8 @@ module.exports = {
     return _v === vToken;
   },
 
-  translate : function(lang, msg) {
+  translate : function(token, lang, msg) {
+    if (!this._verify(token)) throw new ReferenceError('The token is invalid');
     if (!lang) throw new ReferenceError('I can\'t define what is the language...');
     if (!msg) throw new ReferenceError('I can\'t define what is the message...');
 

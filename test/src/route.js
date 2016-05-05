@@ -47,7 +47,7 @@ describe('#route', function() {
     it('Should have a an error if the translation goes wrong', function(done){
       var res = {
         send : function(msg) {
-          expect(msg).to.deep.equal({text:'I can\'t define what is the language...'});
+          expect(msg).to.deep.equal({text:'The token is invalid'});
           done();
         }
       };

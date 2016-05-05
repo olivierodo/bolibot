@@ -19,7 +19,7 @@ module.exports = {
 
   command : function(req, res) {
     try {
-      require('./command').translate(req.params.lang, req.body.text)
+      require('./command').translate(req.body.token, req.params.lang, req.body.text)
       .then(function(response) {
         res.send(response);
       }, function(err) {
