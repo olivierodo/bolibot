@@ -22,21 +22,7 @@ app.get('/', function (req, res) {
 });
 
 // GET /OAUTH
-app.get('/oauth', function (req, res) {
-  try {
-    var code  = req.query.code;
-    var state = req.query.state;
-    oauth.access(code)
-    .then(function(response) {
-      bot.add(response);
-      res.send(response);
-    }, function(error) {
-      res.send(error);
-    });
-  } catch(err) {
-    res.send(err.message);
-  };
-});
+app.get('/oauth', oauth.route);
 
 // POST /{:lang} (/en, /fr)
 app.post('/:lang', function (req, res) {

@@ -9,16 +9,40 @@ require('sinon-as-promised')(Promise);
 
 describe('#oauth', function() {
 
+  var sandbox;
+  beforeEach(function () {
+        sandbox = sinon.sandbox.create();
+  });
+
+  afterEach(function () {
+        sandbox.restore();
+  });
+
+  describe('#route()', function() {
+    it('Should send a error message if the access fail', function (done){
+      var res = {
+        send : function(msg) {
+          expect(msg).to.equal('Please add the code');
+          done();
+        }
+      };
+      Svc.route({query:{}}, res);
+    });
+
+    it('Should send a success message', function (done){
+      var AccessStub = sandbox.stub(Svc, 'access');
+      AccessStub.resolves('good response');
+      var res = {
+        send : function(msg) {
+          expect(msg).to.equal('good response');
+          done();
+        }
+      };
+      Svc.route({query:{code:'e'}}, res);
+    });
+  });
+
   describe('#access()', function() {
-
-    var sandbox;
-    beforeEach(function () {
-          sandbox = sinon.sandbox.create();
-    });
-
-    afterEach(function () {
-          sandbox.restore();
-    });
 
     it('should return an error if the options is undefined', function(done) {
       try {
