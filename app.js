@@ -4,9 +4,9 @@ var
   express = require('express'),
   app = express(),
   config = require('config'),
-  bot = require('./services/bot'),
-  oauth = require('./services/oauth'),
-  command = require('./services/command'),
+  bot = require('./src/bot'),
+  oauth = require('./src/oauth'),
+  command = require('./src/command'),
   bodyParser = require('body-parser');
 
 // CONFIG
@@ -15,13 +15,6 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.set('views', './views');
-
-/*
-var slackOptions = {
-  token : process.env.SLACK_TOKEN || config.slack.api_token,
-  logLevel: 'info'
-};
-*/
 
 // GET /
 app.get('/', function (req, res) {
@@ -64,5 +57,5 @@ app.post('/:lang', function (req, res) {
 var port = process.env.PORT || 5000;
 app.listen(port, process.env.OPENSHIFT_NODEJS_IP, function () {
     console.log('Starting app on port '+ port+ '!');
-    bot.start(); // start bot
+    //bot.start(); // start bot
 });
