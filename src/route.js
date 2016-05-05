@@ -1,6 +1,10 @@
 
 module.exports = {
 
+  home : function(req,res) {
+    return res.render('index');
+  },
+
   oauth : function(req, res) {
     try {
       var code  = req.query.code;
@@ -8,12 +12,12 @@ module.exports = {
       require('./oauth').access(code)
       .then(function(response) {
         require('./bot').add(response);
-        res.send(response);
+        res.render('signUp', response);
       }, function(error) {
-        res.send(error);
+        res.render('signUp', {error: error});
       });
     } catch(err) {
-      res.send(err.message);
+      res.render('signUp', {error:err.message});
     };
   },
 

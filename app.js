@@ -12,9 +12,7 @@ app.set('view engine', 'ejs');
 app.set('views', './views');
 
 // GET /
-app.get('/', function (req, res) {
-  res.render('index', {foo: 'BAR'});
-});
+app.get('/', route.home);
 
 // GET /OAUTH
 app.get('/oauth', route.oauth);
