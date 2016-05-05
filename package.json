@@ -4,8 +4,8 @@
   "description": "Slack bot to translate text from google translate",
   "scripts": {
     "start": "node app.js",
-    "test": "mocha test -R spec --recursive",
-    "test-watch": "mocha test -R landing --recursive -w"
+    "test": "NODE_ENV=test mocha test -R spec --recursive",
+    "test-watch": "NODE_ENV=test mocha test -R landing --recursive -w"
   },
   "keywords": [
     "slack",
@@ -16,8 +16,8 @@
   "license": "ISC",
   "author": {
     "name": "Olivier Rodomond",
-    "email": "o@rodomond.com",
-    "url": "http://olivier.rodomond.com"
+    "email": "hi@olivierodo.com",
+    "url": "http://olivierodo.com"
   },
   "homepage": "http://bolibot.bolingo.io/",
   "repository": {

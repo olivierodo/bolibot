@@ -1,0 +1,28 @@
+{
+  "google" : {
+    "key" : "YOUR_GOOGLE_TRANSLATE_API_KEY",
+    "_comment" : "create a google translate key here : https://console.developers.google.com/apis/api/translate/overview"
+  },
+  "slack" : {
+    "client_id" : "YOUR_SLACK_CLIENT_ID",
+    "client_secret" : "YOUR_SLACK_CLIENT_SECRET",
+    "_comment" : " You dont' the client id and secret for a custom integration",
+    "api_token" : "YOUR_SLACK_TOKEN",
+    "verification_token" : ""
+  },
+  "firebase" : {
+    "url" : "YOUR_FIREBASE_URL"
+  },
+
+  "languages" : {
+    "th" : [],
+    "fr" : [],
+    "es" : ["ea", "es"],
+    "ko" : ["kr"],
+    "it" : [],
+    "zh-CN" : ["cn"],
+    "de" : [],
+    "ja" : ["jp"],
+    "en" : ["gb","us", "um"]
+  }
+}
