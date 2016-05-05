@@ -2,6 +2,16 @@
 module.exports = {
 
   home : function(req,res) {
+    // HELPER TO DELETE
+    if(req && req.param &&  req.param('q')=='signup') {
+      var data = {
+          "ok": req.param('e') ? false : true,
+          "team_name": "MyTeam",
+          "error" : "Just an error example"
+      };
+      return res.render('signUp', data);
+    }
+    // END HELPER TO DELETE
     return res.render('index');
   },
 
@@ -14,10 +24,10 @@ module.exports = {
         require('./bot').add(response);
         res.render('signUp', response);
       }, function(error) {
-        res.render('signUp', {error: error});
+        res.render('signUp', {ok:false, error: error});
       });
     } catch(err) {
-      res.render('signUp', {error:err.message});
+      res.render('signUp', {ok:false, error:err.message});
     };
   },
 
