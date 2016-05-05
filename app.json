@@ -10,7 +10,10 @@
       },
       "SLACK_TOKEN": {
           "description": "Custom integration - Your slackbot Token"
-      }
+      },
+      "VERIFICATION_TOKEN": {
+          "description": "Custom integration - Your slash command verification Token"
+      },
       "CLIENT_ID": {
           "description": "Official app integration - Your app client id"
       },

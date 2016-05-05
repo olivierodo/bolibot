@@ -83,9 +83,9 @@ The app is designed to run easily on Heroku or Docker.
 To host and install *Bolibot* you have to :
 * Create a google translate api key
 * Create a slack token
+* Create your commands and take the verification token
 
 If you wants to add a new language edit [default.json](/config/defaulg.json)
-
 
 ## Heroku
 
@@ -107,6 +107,7 @@ Use Custom App integration
 ```
 docker run -p 80:5000 \
  -e SLACK_TOKEN=XXXX \
+ -e VERIFICATION_TOKEN=XXXX \
  olivierodo/translate-slack-bot
 ```
 
@@ -116,6 +117,7 @@ Use the Offical App integration
 docker run -p 80:5000 \
  -e CLIENT_ID=XXXX \
  -e CLIENT_SECRET=XXXX \
+ -e VERIFICATION_TOKEN=XXXX \
  -e FIREBASE_URL=XXXX \
  olivierodo/translate-slack-bot
 ```

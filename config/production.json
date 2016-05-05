@@ -4,7 +4,11 @@
     "_comment" : "create a google translate key here : https://console.developers.google.com/apis/api/translate/overview"
   },
   "slack" : {
-    "api_token" : "YOUR_SLACK_TOKEN"
+    "client_id" : "YOUR_SLACK_CLIENT_ID",
+    "client_secret" : "YOUR_SLACK_CLIENT_SECRET",
+    "_comment" : " You dont' the client id and secret for a custom integration",
+    "api_token" : "YOUR_SLACK_TOKEN",
+    "verification_token" : "YOUR_VERIFICATION_TOKEN"
   }
 }
 
