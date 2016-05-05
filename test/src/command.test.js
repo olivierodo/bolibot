@@ -8,16 +8,16 @@ Promise = require('bluebird');
 require('sinon-as-promised')(Promise);
 
 describe('#command', function() {
+  var sandbox;
+  beforeEach(function () {
+        sandbox = sinon.sandbox.create();
+  });
+
+  afterEach(function () {
+        sandbox.restore();
+  });
 
   describe('#translate()', function() {
-    var sandbox;
-    beforeEach(function () {
-          sandbox = sinon.sandbox.create();
-    });
-
-    afterEach(function () {
-          sandbox.restore();
-    });
 
     it('Should have an error if the lang is not defined' , function(done) {
       try {
