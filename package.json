@@ -35,7 +35,8 @@
     "ejs": "^2.4.1",
     "express": "~3.4.4",
     "firebase": "^2.4.2",
-    "googleapis": "^5.2.1"
+    "googleapis": "^5.2.1",
+    "html-entities": "^1.2.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
